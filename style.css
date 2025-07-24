@@ -125,21 +125,22 @@ nav a.active {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Accordion Styles (FIXED) --- */
+/* --- Accordion Styles (REVISED AND FINAL) --- */
 .accordion-header {
     cursor: pointer;
     width: 100%;
     text-align: left;
     outline: none;
-    transition: background-color 0.3s;
     position: relative;
-    padding-right: 2rem;
+    margin: 0;
+    padding-right: 2rem; /* Space for the icon */
 }
 
 .accordion-header::after {
-    content: '+'; /* Use a simple plus sign */
+    content: '+';
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--text-color);
     position: absolute;
     right: 0;
     top: 50%;
@@ -155,17 +156,19 @@ nav a.active {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out;
-    padding-top: 0;
-    border-top: 1px solid var(--border-color);
-    margin-top: 1rem;
+    /* All visual styles are removed from the closed state */
 }
 
+/* These styles ONLY apply when the accordion is OPEN */
 .accordion-header.active + .accordion-content {
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
     padding-top: 1rem;
 }
 
 .accordion-content ul {
     padding-left: 20px;
+    margin: 0;
 }
 
 .accordion-content li {
