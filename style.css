@@ -125,15 +125,16 @@ nav a.active {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Accordion Styles (REVISED AND FINAL) --- */
+/* --- Accordion Styles (FINAL FLEXBOX FIX) --- */
 .accordion-header {
     cursor: pointer;
     width: 100%;
-    text-align: left;
     outline: none;
-    position: relative;
     margin: 0;
-    padding-right: 2rem; /* Space for the icon */
+    /* Flexbox layout for perfect alignment */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .accordion-header::after {
@@ -141,25 +142,20 @@ nav a.active {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
+    /* Flexbox handles the alignment, so we just need minimal styling */
+    padding-left: 1rem; /* Adds a bit of space between text and icon */
 }
 
 .accordion-header.active::after {
-    content: '–'; /* Use an en-dash for the minus sign */
+    content: '–';
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out;
-    /* All visual styles are removed from the closed state */
 }
 
-/* These styles ONLY apply when the accordion is OPEN */
 .accordion-header.active + .accordion-content {
     border-top: 1px solid var(--border-color);
     margin-top: 1rem;
