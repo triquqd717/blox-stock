@@ -16,22 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     });
 
-    // --- Accordion Logic ---
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const accordionContent = header.nextElementSibling;
-
-            // Toggle active class on header
-            header.classList.toggle('active');
-
-            // Toggle content visibility
-            if (accordionContent.style.maxHeight) {
-                accordionContent.style.maxHeight = null;
-            } else {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-            }
-        });
-    });
+    // --- Accordion Logic has been removed ---
 });
