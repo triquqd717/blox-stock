@@ -125,7 +125,7 @@ nav a.active {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Accordion Styles --- */
+/* --- Accordion Styles (FIXED) --- */
 .accordion-header {
     cursor: pointer;
     width: 100%;
@@ -133,21 +133,22 @@ nav a.active {
     outline: none;
     transition: background-color 0.3s;
     position: relative;
-    padding-right: 2rem; /* Space for the icon */
+    padding-right: 2rem;
 }
 
 .accordion-header::after {
-    content: '\\25B8'; /* Right-pointing triangle */
-    font-size: 0.8rem;
+    content: '+'; /* Use a simple plus sign */
+    font-size: 1.5rem;
+    font-weight: bold;
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(-50%);
     transition: transform 0.3s ease;
 }
 
 .accordion-header.active::after {
-    transform: translateY(-50%) rotate(90deg);
+    content: '–'; /* Use an en-dash for the minus sign */
 }
 
 .accordion-content {
